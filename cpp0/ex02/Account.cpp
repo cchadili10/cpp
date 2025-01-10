@@ -6,7 +6,7 @@
 /*   By: hchadili <hchadili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 12:42:09 by hchadili          #+#    #+#             */
-/*   Updated: 2025/01/06 17:06:57 by hchadili         ###   ########.fr       */
+/*   Updated: 2025/01/10 13:16:02 by hchadili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void Account::makeDeposit(int deposit)
     _totalAmount += deposit;
     _nbDeposits++; 
     _totalNbDeposits++;
-    std::cout << "deposit:" << deposit << "amount:"<<_amount << ";nb_deposits:" << _nbDeposits << std::endl;
+    std::cout << ";deposit:" << deposit << "amount:"<<_amount << ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
 bool Account::makeWithdrawal(int withdrawal)
