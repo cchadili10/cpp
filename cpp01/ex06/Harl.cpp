@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchadili <hchadili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 14:09:42 by hchadili          #+#    #+#             */
-/*   Updated: 2025/02/15 18:03:17 by hchadili         ###   ########.fr       */
+/*   Created: 2025/02/15 17:42:29 by hchadili          #+#    #+#             */
+/*   Updated: 2025/02/15 18:13:40 by hchadili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@ void Harl::debug( void )
 {
     std::cout << "[ DEBUG ]" << std::endl;
     std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger." << std::endl;
-    std::cout <<" I really do!" << std::endl;
+    std::cout <<"I really do!" << std::endl;
 }
-
 
 void Harl::info()
 {
     std::cout << "[ INFO ]" << std::endl;
     std::cout << "I cannot believe adding extra bacon costs more money."<< std::endl;
-    std::cout <<" You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+    std::cout <<"You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 }
 
 void Harl::warning()
@@ -40,20 +39,31 @@ void Harl::error()
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-
-void Harl::complain(std::string level )
+void Harl::complain(std::string level)
 {
     std::string levles[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Harl::*funcs[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    int index = -1;
     for (int i = 0; i < 4; i++)
     {
-        if(level == levles[i])
-        {
-            (this->*funcs[i])();
-            return ;
-        }
+        if (level == levles[i])
+            index = i;
     }
-    
-    std::cerr << " Probably complaining about insignificant problems" << std::endl;
-    
+    switch (index)
+    {
+    case 0: 
+        debug();
+        break;
+    case 1: 
+        info();
+        break;
+    case 2: 
+        warning();
+        break;
+    case 3: 
+        error();
+        break;
+    default: 
+        std::cerr << "[Probably complaining about insignificant problems]" << std::endl;
+        break;
+    }
 }
