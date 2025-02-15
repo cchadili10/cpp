@@ -1,0 +1,4 @@
+1. We will first create an fstream object.
+2. Then we open the file using open() fstream function in write mode(ios::out)
+3. fstream We then write some data to the file fstream.
+4. object At the end, we close the file using close() function 
